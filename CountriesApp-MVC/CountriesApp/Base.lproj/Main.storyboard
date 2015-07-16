@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ulK-cB-imZ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Countries List-->
+        <scene sceneID="ChS-8x-Axn">
+            <objects>
+                <tableViewController id="fYN-6M-KPp" customClass="CountriesListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="z9d-z2-lLF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Identifier" id="vsT-H3-SJl">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vsT-H3-SJl" id="GiL-wO-4sP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9EV-Pn-Vu0" kind="show" identifier="cityandplaces" id="pgM-PI-uXG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fYN-6M-KPp" id="Cim-kA-gEQ"/>
+                            <outlet property="delegate" destination="fYN-6M-KPp" id="Zy6-Hf-5TQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Countries List" id="i7F-Vw-uLC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQq-oA-o5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90.5" y="16.5"/>
+        </scene>
+        <!--City Table View Controller-->
+        <scene sceneID="x6Z-fI-I4M">
+            <objects>
+                <tableViewController id="9EV-Pn-Vu0" customClass="CityTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bNv-RC-eeD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="fI3-Hp-ZLa">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fI3-Hp-ZLa" id="XGS-TO-nmd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rbp-uF-GSk" kind="show" identifier="PlaceInformation" id="dTv-x4-wOe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9EV-Pn-Vu0" id="Ugf-PY-RvK"/>
+                            <outlet property="delegate" destination="9EV-Pn-Vu0" id="quO-SQ-IuJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUj-Cb-EB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446.5" y="10.5"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="FNO-RR-eaj">
+            <objects>
+                <viewController id="Rbp-uF-GSk" customClass="InformationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D87-EO-0Wk"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVa-lW-OJh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJ6-Wi-1ej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUQ-mk-oiA">
+                                <rect key="frame" x="0.0" y="122" width="375" height="289"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="FUQ-mk-oiA" id="ekl-Ng-FmD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4h-s3-FF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883.5" y="10.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aD4-xi-knZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDd-0l-KcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="ulK-cB-imZ" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qNP-YH-bCU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fYN-6M-KPp" kind="relationship" relationship="rootViewController" id="MKM-uH-CSS"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-593.5" y="16.5"/>
+        </scene>
+    </scenes>
+</document>
